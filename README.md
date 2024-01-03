@@ -1,6 +1,6 @@
 # Sentiment Analysis of Amazon, ImDB, and Yelp Reviews
 
-<b> In this project, I used 3000 reviews from Amazon, ImDB, and Yelp and built a neural network model using natural language processing techniques to predict a customer's opinion as either positive or negative.</b></br>
+<b> In this project, I used 3000 reviews from Amazon, ImDB, and Yelp to build a neural network model using natural language processing techniques. This model could predict a customer's opinion as either positive or negative.</b></br>
 
 <b> Data Preparation Process</b><br>
 1. Each dataset was concatenated together into one pandas dataframe.
