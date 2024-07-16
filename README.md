@@ -1,38 +1,43 @@
-# Sentiment Analysis of Amazon, ImDB, and Yelp Reviews
-
-<b> In this project, I used 3000 reviews from Amazon, ImDB, and Yelp to build a neural network model using natural language processing techniques. This model could predict a customer's opinion as either positive or negative.</b></br>
-
-<b> Data Preparation Process</b><br>
-1. Each dataset was concatenated together into one pandas dataframe.
-2. Data were examined for the presence of null values.
-3. Data were examined to ensure there were approximately equal numbers of positive and negative sentiments for training the model.
-4. Non-alpha characters were identified and removed.
-5. The data were cleaned to convert all letters to lowercase, remove stop words, and lemmatize text.
-6. Data were explored to identify the vocabulary length, embedding length, and maximum review length.
-7. Data were split into training (75%) and testing (25%) sets.
-8. The training and testing sets were prepared for sentiment analysis: training sentences were tokenized, training and testing sentences were converted to sequences, sequences were padded to the maximum review length, training and testing sets were converted to numpy arrays, and training and testing sets were one_hot encoded.
+<h1> Sentiment Analysis of Amazon, ImDB, and Yelp Reviews </h1>
 <br>
-<b> Network Architecture of Final Model</b><br>
-<img width="600" alt="image" src="https://github.com/cfuller19/cfuller19-sentiment-analysis/assets/101231073/ca33d828-9b55-40c4-9427-92d63f06fe0d"><br>
-A description of each layer is given below:<br>
-- 1st layer: Embedding; turns positive indexes into dense, fixed size vectors.
-- 2nd layer: GlobalAveragePooling1D; pooling layer for temporal data.
-- 3rd layer: Dense; contains the connected "neurons" in the neural network. Each neuron (node) takes input from the previous layer.
-- 4th layer: Dropout; randomly sets inputs to 0 to help prevent overfitting.
-- 5th layer: Dense; contains the connected "neurons" in the neural network. Each neuron (node) takes input from the previous layer.
-
+<h2> Project Description/Purpose </h2>
 <br>
-An explanation of the hyperparameters used in this model is given below. <br>
-<img width="800" alt="image" src="https://github.com/cfuller19/cfuller19-sentiment-analysis/assets/101231073/3acd6d60-ecbb-4e0e-8202-faa895e90000"><br>
+Analyzing online reviews of products can help businesses improve their product offerings and identify trends in customer sentiment towards specific product lines. The purpose of this project was to analyze customer reviews from Amazon, ImDB, and Yelp, and using customer review data build a neural network model with natural language processing techniques to predict whether a customer's review has positive or negative sentiment.
+<br>
+<h2> Tools Used For Analysis </h2>
+<br>
+<b>Data:</b> The data used for this analysis consisted of 1000 labeled reviews from Amazon, 1000 labeled reviews from ImDB, and 1000 labeled reviews from Yelp. The dataset used for this analysis was obtained from UC Irvine Machine Learning Repository and is licensed under Creative Commons Attribution 4.0 International. The dataset can be obtained <a href="https://archive.ics.uci.edu/dataset/331/sentiment+labelled+sentences"> here.</a>
+<br>
+<br>
+All parts of this analysis were conducted using Python in a Jupyter notebook and mainly utilized the Keras library from TensorFlow. The Python libraries and modules used for this analysis included:
+<br>
+<ul>
+  <li>Pandas</li>
+  <li>Numpy</li>
+  <li>stopwords from nltk.corpus</li>
+  <li>WordNetLemmatizer from nltk.stem</li>
+  <li>Tokenizer from tensorflow.keras.preprocessing.text</li>
+  <li>train_test_split from sklearn.model_selection</li>
+  <li>pad_sequences from tensorflow.keras.preprocessing.seequence</li>
+  <li>TensorFlow</li>
+  <li>Embedding from tensorflow.keras.layers</li>
+  <li>EarlyStopping from tensorflow.keras.callbacks</li>
+  <li>matplotlib.pyplot</li>
+</ul>
+<br>
+<h2> Summary of Findings</h2>
+<br> 
+A summary of key findings can be found in the executive summary linked <a href="https://docs.google.com/presentation/d/1PBk8sdiwbwsyZRpWN78Hy1lgTxNrnziKbSRokeIWDrw/edit?usp=sharing">here.</a>
+<br>
+<br>
+<h2> Resources</h2>
+<br>
+<ul>
+  <li><b>Python Code:</b> The Python code used in this project can be examined in the <a href="https://github.com/cfuller19/cfuller19-sentiment-analysis/blob/main/SentimentAnalysis.ipynb">code section of this repository.</a> </li>
+</ul>
 
-<b> Model Evaluation </b><br>
-The final model had a predictive accuracy of ~80%.<br>
-A plot of accuracy vs epoch for the training and validation data is shown below.<br>
-<img width="500" alt="image" src="https://github.com/cfuller19/cfuller19-sentiment-analysis/assets/101231073/8271e694-cfd6-455b-8939-89cee886b7a7"><br>
-As seen in the plot, accuracy on the training and validation data sets stopped improving around epoch 35. The training accuracy and validation accuracy are relatively close, at ~85% and ~80%, respectively.<br>
-A plot of loss vs epoch for the training and validation data is shown below.<br>
-<img width="500" alt="image" src="https://github.com/cfuller19/cfuller19-sentiment-analysis/assets/101231073/6a0e43ca-3cb8-471c-9cc3-c45c9349d578"><br>
-As seen in the plot, loss decreased through the 35 epochs, with the validation loss leveling out. The validation loss is greater than the training loss, indicating the model has potential overfitting issues.
+
+
 
 
 
